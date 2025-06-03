@@ -113,12 +113,16 @@ const Header: React.FC<HeaderProps> = ({
           <button 
             onClick={() => onNavigate('prev')}
             className={`p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 ${darkMode ? 'text-white' : 'text-gray-600'}`}
+            data-testid="prev-button"
+            aria-label="Previous month"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button 
             onClick={() => onNavigate('next')}
             className={`p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 ${darkMode ? 'text-white' : 'text-gray-600'}`}
+            data-testid="next-button"
+            aria-label="Next month"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
@@ -172,12 +176,16 @@ const Header: React.FC<HeaderProps> = ({
             <button 
               onClick={() => onNavigate('prev')}
               className={`p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 ${darkMode ? 'text-white' : 'text-gray-600'}`}
+              data-testid="prev-button"
+              aria-label="Previous month"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button 
               onClick={() => onNavigate('next')}
               className={`p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 ${darkMode ? 'text-white' : 'text-gray-600'}`}
+              data-testid="next-button"
+              aria-label="Next month"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
@@ -201,6 +209,8 @@ const Header: React.FC<HeaderProps> = ({
           <button 
             onClick={onToggleDarkMode}
             className={`p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 ${darkMode ? 'text-white' : 'text-gray-600'}`}
+            data-testid="dark-mode-button"
+            aria-label="Toggle dark mode"
           >
             {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
           </button>
