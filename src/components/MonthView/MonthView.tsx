@@ -57,7 +57,7 @@ const MonthView: React.FC<MonthViewProps> = ({ currentDate, events, onDateClick,
   const today = new Date();
 
   return (
-    <div className={`flex-1 ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
+    <div className={`flex-1 ${darkMode ? 'bg-black' : 'bg-white'}`}>
       <div className={`grid grid-cols-7 border-b ${darkMode ? 'border-gray-700' : 'border-gray-200'}`}>
         {['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].map((day) => (
           <div key={day} className={`p-1 sm:p-4 text-center text-[7px] sm:text-sm font-medium ${darkMode ? 'text-gray-300 bg-gray-800' : 'text-gray-500 bg-gray-50'}`}>
@@ -78,7 +78,7 @@ const MonthView: React.FC<MonthViewProps> = ({ currentDate, events, onDateClick,
               className={`
                 border-r border-b p-2 min-h-10 sm:min-h-32 cursor-pointer relative
                 ${darkMode ? 'border-gray-700 hover:bg-gray-800' : 'border-gray-200 hover:bg-gray-50'}
-                ${!isCurrentMonth ? (darkMode ? 'bg-gray-900' : 'bg-gray-50') : ''}
+                ${!isCurrentMonth ? (darkMode ? 'bg-black' : 'bg-gray-50') : ''}
                 ${isToday ? (darkMode ? 'bg-blue-900' : 'bg-blue-50') : ''}
               `}
               onClick={() => onDateClick(day)}

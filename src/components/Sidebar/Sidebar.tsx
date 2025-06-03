@@ -44,7 +44,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentDate, onDateSelect, onCreateEv
   return (
     <div className={`
       w-34 sm:w-80 border-r h-full overflow-y-auto scrollbar-hide
-      ${darkMode ? 'bg-gray-900 border-gray-700' : 'bg-white border-gray-200'} 
+      ${darkMode ? 'bg-zinc-950 border-gray-700' : 'bg-white border-gray-200'} 
       p-2 sm:p-4
     `}
     style={{
@@ -107,7 +107,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentDate, onDateSelect, onCreateEv
                   aspect-square text-xs rounded hover:bg-gray-100 dark:hover:bg-gray-700 min-h-[18px] sm:min-h-[28px] flex items-center justify-center
                   ${!isCurrentMonth ? (darkMode ? 'text-gray-600' : 'text-gray-400') : (darkMode ? 'text-white' : 'text-gray-900')}
                   ${isToday ? 'bg-blue-500 text-white hover:bg-blue-600' : ''}
-                  ${isSelected && !isToday ? (darkMode ? 'bg-gray-700' : 'bg-gray-200') : ''}
+                  ${isSelected && !isToday ? (darkMode ? 'bg-gray-950' : 'bg-gray-200') : ''}
                 `}
               >
                 {day.getDate()}

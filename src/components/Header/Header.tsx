@@ -54,7 +54,7 @@ const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className={`px-3 sm:px-6 py-3 border-b ${darkMode ? 'bg-gray-900 border-gray-700' : 'bg-white border-gray-200'}`}>
+    <header className={`px-3 sm:px-6 py-3 border-b ${darkMode ? 'bg-zinc-950 border-gray-700' : 'bg-white border-gray-200'}`}>
       {/* Mobile Layout */}
       <div className="flex sm:hidden items-center justify-between">
         {/* Left side - Menu, Logo, Today button */}
@@ -108,7 +108,7 @@ const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Mobile Second Row - Navigation and Date */}
-      <div className="flex sm:hidden items-center justify-between mt-2 pt-2 border-t border-gray-200 dark:border-gray-700">
+      <div className="flex sm:hidden items-center justify-between mt-2 pt-2 border-t border-gray-200 dark:border-gray-850">
         <div className="flex items-center space-x-1">
           <button 
             onClick={() => onNavigate('prev')}
@@ -161,7 +161,7 @@ const Header: React.FC<HeaderProps> = ({
           </button>
           
           <div className="flex items-center space-x-2">
-            <img src={CalenderImg} className="w-8 h-8 text-blue-500" />
+            <img src={CalenderImg} className="w-8 h-8 text-blue-500" alt='Calendar Image'/>
             <span className={`text-xl font-normal ${darkMode ? 'text-white' : 'text-gray-700'}`}>Calendar</span>
           </div>
           
@@ -202,13 +202,13 @@ const Header: React.FC<HeaderProps> = ({
             <input 
               type="text" 
               placeholder="Search" 
-              className={`pl-10 pr-4 py-2 rounded-full border w-80 ${darkMode ? 'bg-gray-800 border-gray-600 text-white placeholder-gray-400' : 'bg-white border-gray-300 text-gray-700 placeholder-gray-500'}`}
+              className={`pl-10 pr-4 py-2 rounded-full border w-80 ${darkMode ? 'bg-gray-950 border-gray-600 text-white placeholder-gray-700' : 'bg-white border-gray-300 text-gray-700 placeholder-gray-500'}`}
             />
           </div>
           
           <button 
             onClick={onToggleDarkMode}
-            className={`p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 ${darkMode ? 'text-white' : 'text-gray-600'}`}
+            className={`p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-850 ${darkMode ? 'text-white' : 'text-gray-600'}`}
             data-testid="dark-mode-button"
             aria-label="Toggle dark mode"
           >
@@ -227,14 +227,14 @@ const Header: React.FC<HeaderProps> = ({
             <select 
               value={view} 
               onChange={(e) => onViewChange(e.target.value as 'month' | 'week' | 'day')}
-              className={`px-3 py-2 rounded border ${darkMode ? 'bg-gray-800 border-gray-600 text-white' : 'bg-white border-gray-300 text-gray-700'}`}
+              className={`px-3 py-2 rounded border ${darkMode ? 'bg-gray-950 border-gray-800 text-white' : 'bg-white border-gray-300 text-gray-700'}`}
             >
               <option value="month">Month</option>
               <option value="week">Week</option>
               <option value="day">Day</option>
             </select>
             
-            <button className={`p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-700 ${darkMode ? 'text-white' : 'text-gray-600'}`}>
+            <button className={`p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-950 ${darkMode ? 'text-white' : 'text-gray-600'}`}>
               <Grid3X3 className="w-5 h-5" />
             </button>
           </div>

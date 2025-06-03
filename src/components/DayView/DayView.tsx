@@ -62,7 +62,7 @@ const DayView: React.FC<DayViewProps> = ({
 
   return (
     <div className={`flex-1 overflow-auto ${darkMode ? 'bg-gray-900' : 'bg-white'}`}>
-      <div className={`border-b sticky top-0 z-10 ${darkMode ? 'border-gray-700 bg-gray-800' : 'border-gray-200 bg-gray-50'}`}>
+      <div className={`border-b sticky top-0 z-10 ${darkMode ? 'border-black bg-black' : 'border-gray-200 bg-gray-50'}`}>
         <div className={`p-4 text-center ${isToday ? 'text-blue-600 dark:text-blue-400' : (darkMode ? 'text-gray-300' : 'text-gray-700')}`}>
           <div className="text-sm font-medium">
             {currentDate.toLocaleDateString('en-US', { weekday: 'long' }).toUpperCase()}
