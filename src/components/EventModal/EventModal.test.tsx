@@ -25,7 +25,6 @@ describe('EventModal Component', () => {
     onClose: mockOnClose,
     onSave: mockOnSave,
     selectedDate: new Date(2025, 5, 3),
-    editEvent: null,
     darkMode: false,
   };
 

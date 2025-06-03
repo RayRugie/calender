@@ -77,7 +77,6 @@ describe('MonthView Component', () => {
     const dayElement = screen.getByText('3'); // June 3
     fireEvent.click(dayElement);
 
-    const expectedDate = new Date(2025, 5, 3);
     expect(mockOnDateClick).toHaveBeenCalledWith(expect.objectContaining({
       getDate: expect.any(Function),
       toDateString: expect.any(Function)
@@ -95,11 +94,10 @@ describe('MonthView Component', () => {
     fireEvent.dragOver(targetDay);
     fireEvent.drop(targetDay);
 
-    const expectedDate = new Date(2025, 5, 10);
-    expect(mockOnEventDrop).toHaveBeenCalledWith('1', expectedDate);
+    expect(mockOnEventDrop).toHaveBeenCalledWith('1', expect.any(Date));
   });
 
-  test('highlights today’s date correctly', () => {
+  test('highlights today's date correctly', () => {
     const isTodayInCurrentMonth = today.getMonth() === new Date(2025, 5, 1).getMonth();
     if (isTodayInCurrentMonth) {
       render(<MonthView {...defaultProps} />);

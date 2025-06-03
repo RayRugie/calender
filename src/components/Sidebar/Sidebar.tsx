@@ -16,7 +16,6 @@ const Sidebar: React.FC<SidebarProps> = ({ currentDate, onDateSelect, onCreateEv
     const year = miniCalendarDate.getFullYear();
     const month = miniCalendarDate.getMonth();
     const firstDay = new Date(year, month, 1);
-    const lastDay = new Date(year, month + 1, 0);
     const startDate = new Date(firstDay);
     startDate.setDate(startDate.getDate() - firstDay.getDay());
     const days = [];
@@ -52,11 +51,13 @@ const Sidebar: React.FC<SidebarProps> = ({ currentDate, onDateSelect, onCreateEv
       msOverflowStyle: 'none', /* Internet Explorer 10+ */
     }}
     >
-      <style jsx>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none; /* Safari and Chrome */
-        }
-      `}</style>
+      <style>
+        {`
+          .scrollbar-hide::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+          }
+        `}
+      </style>
       
        <button 
         onClick={onCreateEvent}
@@ -75,12 +76,14 @@ const Sidebar: React.FC<SidebarProps> = ({ currentDate, onDateSelect, onCreateEv
             <button 
               onClick={() => navigateMiniCalendar('prev')}
               className={`p-0.5 sm:p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 ${darkMode ? 'text-white' : 'text-gray-600'}`}
+              aria-label="Previous month"
             >
               <ChevronLeft className="w-3 h-3 sm:w-4 sm:h-4" />
             </button>
             <button 
               onClick={() => navigateMiniCalendar('next')}
               className={`p-0.5 sm:p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-700 ${darkMode ? 'text-white' : 'text-gray-600'}`}
+              aria-label="Next month"
             >
               <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
             </button>
